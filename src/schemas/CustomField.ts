@@ -1,5 +1,5 @@
 import { CustomFieldType } from "../enums/CustomFieldType";
-import { CustomFieldOption } from "./CustomFieldOption";
+import { CustomFieldOption } from "./option/CustomFieldOption";
 
 export interface CustomField {
   id: number;
