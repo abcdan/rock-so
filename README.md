@@ -3,6 +3,17 @@ An unofficial wrapper around the Rock.so public API
 
 It's almost complete, documentation will be added later.
 
+## Installation
+It's really simple!
+
+```
+npm i rock-so
+```
+or
+```
+yarn add rock-so
+```
+
 ## Credits
 Thanks for for people at Rock.so for making the platform. I truly love it.
 
