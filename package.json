@@ -1,8 +1,9 @@
 {
   "name": "rock-so",
   "version": "0.0.3",
-  "description": "An unofficial wrapper around the Rock.so Public API",
-  "main": "src/index.js",
+  "description": "🪨 An unofficial wrapper around the Rock.so Public API",
+  "main": "lib/index.js",
+  "types": "lib/main.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
