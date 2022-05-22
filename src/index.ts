@@ -1,7 +1,6 @@
 import { SendMessageRequest } from "./schemas/request/SendMessageRequest";
 import { SendMessageResponse } from "./schemas/response/SendMessageResponse";
 import { SendMessageErrorResponse } from "./schemas/response/SendMessageErrorResponse";
-import fetch from "node-fetch";
 import { CreateNoteRequest } from "./schemas/request/CreateNoteRequest";
 import { CreateNoteErrorResponse } from "./schemas/response/CreateNoteErrorResponse";
 import { CreateNoteResponse } from "./schemas/response/CreateNoteResponse";
