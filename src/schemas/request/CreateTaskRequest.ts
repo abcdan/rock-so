@@ -1,6 +1,6 @@
-import { CustomField } from "./CustomField";
-import { RecurringSchedule } from "./RecurringSchedule";
-import { TextFragment } from "./TextFragment";
+import { CustomField } from "../CustomField";
+import { RecurringSchedule } from "../RecurringSchedule";
+import { TextFragment } from "../TextFragment";
 
 
 export interface CreateTaskRequest {

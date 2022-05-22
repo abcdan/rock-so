@@ -1,4 +1,4 @@
-import { Sprint } from "./Sprint";
+import { Sprint } from "../Sprint";
 
 export interface ListSprintsResponse {
   sprints: Sprint;

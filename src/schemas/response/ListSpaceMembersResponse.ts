@@ -1,4 +1,4 @@
-import { SpaceMember } from "./SpaceMember";
+import { SpaceMember } from "../SpaceMember";
 
 export interface ListSpaceMembersResponse {
   members: SpaceMember[];

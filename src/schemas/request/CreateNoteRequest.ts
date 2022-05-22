@@ -1,4 +1,4 @@
-import { TextFragment } from "./TextFragment";
+import { TextFragment } from "../TextFragment";
 
 export interface CreateNoteRequest {
   body: TextFragment;
