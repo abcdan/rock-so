@@ -1,5 +1,5 @@
 # rock-so
-An unofficial wrapper around the Rock.so public API
+🪨 An unofficial wrapper around the Rock.so public API
 
 It's almost complete, documentation will be added later.
 
