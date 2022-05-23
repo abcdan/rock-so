@@ -15,9 +15,11 @@ import axios from "axios";
 
 class Rock {
   private token: string;
+  private verbose: boolean;
 
-  constructor(token: string) {
+  constructor(token: string, verbose = false) {
     this.token = token;
+    this.verbose = verbose;
   }
 
   public async sendMessage(message: SendMessageRequest) {
@@ -53,46 +55,58 @@ class Rock {
       "GET"
     )) as ListSprintsResponse;
   }
-  
+
   public async listLabels() {
-    return (await this._request(
-      "listLabels",
-      {},
-      "GET"
-    )) as ListLabelsResponse;
+    return (await this._request("listLabels", {}, "GET")) as ListLabelsResponse;
   }
 
   public async getTaskLists() {
-    return (await this._request(
-      "getTaskLists",
-      {},
-      "GET"
-    )) as TaskList[];
+    return (await this._request("getTaskLists", {}, "GET")) as TaskList[];
   }
   public async getCustomFields() {
-    return (await this._request(
-      "getCustomFields",
-      {},
-      "GET"
-    )) as CustomField[];
+    return (await this._request("getCustomFields", {}, "GET")) as CustomField[];
   }
 
   async _request(method: string, body: any = {}, type = "GET") {
-    const url = `https://api.rock.so/webhook/bot?method=${method}&auth=${this.token}` 
-  
-    if(type === "GET") {
-      const res = axios.get(url, body);
-      return await res as any;
+    const url = `https://api.rock.so/webhook/bot?method=${method}&auth=${this.token}`;
+
+    if (type === "GET") {
+      try {
+        const res = await axios.get(url, body);
+
+        if (this.verbose) {
+          console.log(res.data);
+        }
+
+        return res as any;
+      } catch (error) {
+        console.log(error);
+
+        if (this.verbose) {
+          console.error(error);
+        }
+        throw error;
+      }
     }
-    if(type === "POST") {
-      const res = axios.get(url, body);
-      return await res as any;
+    if (type === "POST") {
+      try {
+        const res = await axios.post(url, body);
 
+        if (this.verbose) {
+          console.log(res.data);
+        }
+
+        return res as any;
+      } catch (error) {
+        if (this.verbose) {
+          console.error(error);
+        }
+        throw error;
+      }
     }
 
-
+    return null;
   }
 }
 
-
-export = Rock
+export = Rock;
