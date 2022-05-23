@@ -22,24 +22,47 @@ class Rock {
     this.verbose = verbose;
   }
 
+  /**
+   * This function sends a message to a user, and returns a response object that is either a
+   * SendMessageResponse or a SendMessageErrorResponse.
+   * @param {SendMessageRequest} message - SendMessageRequest
+   * @returns SendMessageResponse | SendMessageErrorResponse
+   */
   public async sendMessage(message: SendMessageRequest) {
     return (await this._request("sendMessage", message, "POST")) as
       | SendMessageResponse
       | SendMessageErrorResponse;
   }
 
+  /**
+   * This function takes a CreateNoteRequest object, sends it to the server, and returns a
+   * CreateNoteResponse object or a CreateNoteErrorResponse object.
+   * @param {CreateNoteRequest} note - CreateNoteRequest
+   * @returns CreateNoteResponse or CreateNoteErrorResponse
+   */
   public async createNote(note: CreateNoteRequest) {
     return (await this._request("createNote", note, "POST")) as
       | CreateNoteResponse
       | CreateNoteErrorResponse;
   }
 
+  /**
+   * "This function takes a CreateNoteRequest object, sends it to the server, and returns a
+   * CreateTaskRequest object or a CreateTaskErrorResponse object."
+   * </code>
+   * @param {CreateNoteRequest} task - CreateNoteRequest
+   * @returns CreateTaskRequest | CreateTaskErrorResponse
+   */
   public async createTask(task: CreateNoteRequest) {
     return (await this._request("createTask", task, "POST")) as
       | CreateTaskRequest
       | CreateTaskErrorResponse;
   }
 
+  /**
+   * This function returns a list of all the members of the space.
+   * @returns The return type is ListSpaceMembersResponse.
+   */
   public async listSpaceMembers() {
     return (await this._request(
       "listSpaceMembers",
@@ -48,6 +71,10 @@ class Rock {
     )) as ListSpaceMembersResponse;
   }
 
+  /**
+   * This function returns a list of sprints.
+   * @returns The return type is ListSprintsResponse.
+   */
   public async listSprints() {
     return (await this._request(
       "listSprints",
@@ -56,17 +83,38 @@ class Rock {
     )) as ListSprintsResponse;
   }
 
+  /**
+   * This function returns a list of labels.
+   * @returns The response from the API call.
+   */
   public async listLabels() {
     return (await this._request("listLabels", {}, "GET")) as ListLabelsResponse;
   }
 
+  /**
+   * This function returns a list of TaskLists, which are objects that contain a list of Tasks.
+   * @returns An array of TaskList objects.
+   */
   public async getTaskLists() {
     return (await this._request("getTaskLists", {}, "GET")) as TaskList[];
   }
+
+  /**
+   * This function returns an array of CustomField objects, which are defined in the CustomField.ts
+   * file.
+   * @returns An array of CustomFields
+   */
   public async getCustomFields() {
     return (await this._request("getCustomFields", {}, "GET")) as CustomField[];
   }
 
+  /**
+   * It takes in a method, body, and type, and returns a response from the API.
+   * @param {string} method - The method you want to call.
+   * @param {any} body - any = {}
+   * @param [type=GET] - GET or POST
+   * @returns The response from the API.
+   */
   async _request(method: string, body: any = {}, type = "GET") {
     const url = `https://api.rock.so/webhook/bot?method=${method}&auth=${this.token}`;
 

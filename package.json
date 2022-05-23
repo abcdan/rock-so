@@ -6,6 +6,7 @@
   "types": "lib/main.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "npx typedoc src/index.ts",
     "build": "tsc"
   },
   "repository": {
@@ -28,8 +29,7 @@
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
-    "@types/node-fetch": "^2.6.1",
     "axios": "^0.27.2",
-    "node-fetch": "^3.2.4"
+    "typedoc": "^0.22.15"
   }
 }
