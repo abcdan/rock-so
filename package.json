@@ -1,6 +1,6 @@
 {
   "name": "rock-so",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "🪨 An unofficial wrapper around the Rock.so Public API",
   "main": "lib/index.js",
   "types": "lib/main.d.ts",
