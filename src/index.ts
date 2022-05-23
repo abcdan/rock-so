@@ -128,8 +128,6 @@ class Rock {
 
         return res as any;
       } catch (error) {
-        console.log(error);
-
         if (this.verbose) {
           console.error(error);
         }
