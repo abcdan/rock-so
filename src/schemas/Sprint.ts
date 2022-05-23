@@ -1,6 +1,0 @@
-export interface Sprint {
-  id: number;
-  name: string;
-  start: number;
-  end: number;
-}
